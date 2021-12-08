@@ -1,0 +1,10 @@
+create database store;
+SELECT prime_genre FROM store.applestore group by prime_genre;
+SELECT prime_genre,sum(rating_count_tot) FROM store.applestore group by prime_genre;
+SELECT id, track_name, prime_genre from store.applestore group by sum(id) DESC, prime_genre DESC limit 1;
+SELECT id, track_name, prime_genre from store.applestore order by prime_genre ASC;
+SELECT track_name,rating_count_tot FROM store.applestore order by rating_count_tot DESC limit 10;
+SELECT track_name,user_rating FROM store.applestore order by user_rating DESC limit 10;
+SELECT prime_genre, sum(rating_count_tot) FROM store.applestore group by prime_genre order by sum(rating_count_tot) DESC limit 3;
+SELECT prime_genre, count(id) from store.applestore group by prime_genre order by count(id) DESC limit 1;
+SELECT prime_genre, count(id) from store.applestore group by prime_genre order by count(id) ASC;  
